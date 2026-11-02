@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fridge Song List</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="door" aria-hidden="true"></div>
+
+<main class="stage">
+  <section class="panel" id="panel" aria-label="Pemutar musik">
+    <div class="acrylic">
+      <span class="bolt tl"></span><span class="bolt tr"></span><span class="bolt bl"></span><span class="bolt br"></span>
+      <header class="brand">
+        <h1 id="brand-title"></h1>
+        <p id="brand-sub"></p>
+      </header>
+      <div class="art">
+        <div class="covers" id="covers"></div>
+        <div class="halo"></div>
+        <div class="slot" id="slot"></div>
+      </div>
+      <p class="now is-empty" id="now" aria-live="polite"><b id="now-title"></b><span id="now-sub"></span></p>
+      <div class="bar">
+        <span id="cur">00:00</span>
+        <input type="range" id="seek" min="0" max="100" step="1" value="0" aria-label="Posisi lagu" disabled>
+        <span id="dur">00:00</span>
+      </div>
+      <div class="controls">
+        <button type="button" class="toggle" id="shuffle" aria-label="Acak lagu" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3.5 21.5 7 17 10.500V8h-1.800c-1.300 0-2.400.6-3.100 1.700l-4.200 6.600C7 18 5.300 19 3.300 19H2v-2.300h1.300c1.200 0 2.200-.6 2.800-1.500l4.200-6.700C11.400 6.700 13.200 5.700 15.200 5.700H17zM2 5.700h1.300c1.900 0 3.600.9 4.700 2.400L6.700 10.200c-.7-1-1.800-2.200-3.400-2.200H2zM17 13.500l4.500 3.500-4.500 3.500V18.300h-1.800c-1.900 0-3.600-.9-4.700-2.400l1.300-2.100c.7 1 1.800 2.200 3.400 2.200H17z"/></svg>
+        </button>
+        <button type="button" id="prev" aria-label="Lagu sebelumnya">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 5v14L8 12z"/><path d="M5 5h2.400v14H5z"/></svg>
+        </button>
+        <button type="button" id="play" aria-label="Putar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path id="play-icon" d="M7 4.500v15l12.500-7.500z"/></svg>
+        </button>
+        <button type="button" id="next" aria-label="Lagu berikutnya">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5v14l11-7z"/><path d="M16.600 5H19v14h-2.400z"/></svg>
+        </button>
+        <button type="button" class="toggle" id="repeat" aria-label="Ulangi: mati">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.500 6.500H17V4l4.500 3.500L17 11V8.800H7.500c-1.800 0-3.200 1.400-3.200 3.200v.8H2V12c0-3 2.500-5.500 5.500-5.500zM16.500 17.500H7V20l-4.500-3.500L7 13v2.200h9.500c1.800 0 3.200-1.400 3.200-3.200v-.8H22v.8c0 3-2.500 5.500-5.500 5.500z"/></svg>
+          <b id="repeat-one" hidden>1</b>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-label="Koleksi piringan">
+    <div class="discs" id="discs"></div>
+    <p class="hint" id="hint"></p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
