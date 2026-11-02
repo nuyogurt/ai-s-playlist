@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Fridge Song List</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,10 +27,24 @@
         <div class="halo"></div>
         <div class="slot" id="slot"></div>
       </div>
-      <p class="now is-empty" id="now" aria-live="polite"><b id="now-title"></b><span id="now-sub"></span></p>
+      <div class="deck">
+        <div class="dial">
+          <div class="knob" id="volume" role="slider" tabindex="0" aria-label="Volume"></div>
+          <span id="volume-label">VOL</span>
+        </div>
+        <p class="now is-empty" id="now" aria-live="polite"><b id="now-title"></b><span id="now-sub"></span></p>
+        <div class="dial">
+          <div class="knob" id="speed" role="slider" tabindex="0" aria-label="Kecepatan"></div>
+          <span id="speed-label">SPEED</span>
+        </div>
+      </div>
       <div class="bar">
         <span id="cur">00:00</span>
-        <input type="range" id="seek" min="0" max="100" step="1" value="0" aria-label="Posisi lagu" disabled>
+        <div class="track" id="track">
+          <canvas id="wave" aria-hidden="true"></canvas>
+          <input type="range" id="seek" min="0" max="100" step="1" value="0" aria-label="Posisi lagu" disabled>
+          <output id="tip" hidden></output>
+        </div>
         <span id="dur">00:00</span>
       </div>
       <div class="controls">
@@ -56,9 +71,11 @@
   <section class="shelf" aria-label="Koleksi piringan">
     <div class="discs" id="discs"></div>
     <p class="hint" id="hint"></p>
+    <p class="keys">Spasi putar · ← → ganti lagu · ↑ ↓ volume · 1–9 pilih · M bisu · Esc lepas</p>
   </section>
 </main>
 
+<script src="waves.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
