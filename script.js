@@ -5,7 +5,7 @@
    cover         : link atau path gambar, misalnya "covers/lagu1.jpg"
    audio         : nama file lagu di folder ini (durasinya otomatis ikut file)
    ========================================================================== */
-const COLLECTION = { title: 'SONG LIST', subtitle: 'THE MUSIC COLLECTION' };
+const COLLECTION = { title: 'Ai\'s Song List', subtitle: 'asikk tempelan kulkas lusyu' };
 
 const SONGS = [
   {
